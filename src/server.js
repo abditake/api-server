@@ -1,45 +1,19 @@
 'use strict';
 
-const supertest = require('supertest');
-const { server } = require('../src/server');
-const { sequelize } = require('../src/models');
-const mockRequest = supertest(server);
+const express = require('express');
+const clothesRouter = require('./routes/clothes');
+require('dotenv').config();
 
-beforeAll(async () => {
-  await sequelize.sync();
-});
+const app = express();
 
-afterAll(async () => {
-  await sequelize.drop();
-});
 
-let person = {
-  name: 'abdi',
-  age: 42,
-  eyeColor: 'brown',
+const PORT = process.env.PORT || 3002;
+
+app.use(express.json());
+app.use(clothesRouter);
+
+module.exports = {
+  server: app,
+  start: () => app.listen(PORT, console.log('listening on port', PORT)),
 };
 
-describe('Testing REST API', () => {
-
-  test('Create a person', async() => {
-    let response = await mockRequest.post('/clothes').send(person);
-
-    expect(response.status).toEqual(200);
-    expect(response.body.name).toEqual('abdi');
-    expect(response.body.age).toEqual(42);
-    expect(response.body.eyeColor).toEqual('brown');
-  });
-
-  test('Should read from people', async () => {
-    
-    expect(true).toBe(false);
-  });
-
-  test('Should update a person', () => {
-    expect(true).toBe(false);
-  });
-
-  test('Should delete a person', () => {
-    expect(true).toBe(false);
-  });
-});
