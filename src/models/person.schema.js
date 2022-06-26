@@ -11,9 +11,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     eyeColor: {
-      type: DataTypes.ENUM,
-      values: ['brown', 'hazel', 'blue'],
-      allowNull: true,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   });
 };
