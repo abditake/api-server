@@ -6,8 +6,8 @@ LAB - Express
 
 ### [](https://github.com/abditake/basic-api-server/tree/dev#author-abdinasir-yussuf)Author: Abdinasir Yussuf
 
--   [tests report](https://github.com/codefellows/code-401-javascript-example-lab/actions)
--   [front-end](https://code-401-js-lab-example.herokuapp.com/status)
+-   [tests report](https://github.com/abditake/api-server/runs/7057441900?check_suite_focus=true)
+-   [front-end](https://github.com/abditake/api-server/deployments/activity_log?environment=ay-api-server-dev)
 
 ### [](https://github.com/abditake/basic-api-server/tree/dev#setup)Setup
 
